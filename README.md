@@ -38,3 +38,21 @@ Passo 3 -> baixar vscode code.visualstudio.com/download
 Passo 4 -> instalar vscode
 
 ---
+
+Aula 4 : Criando os primeiros comandos em PHP
+php -S localhost:8080 -d auto_prepend_file=server.php // Define a diretiva auto_prepend_file para que server.php seja incluído automaticamente antes de qualquer outro script ser executado.
+
+o comando echo serve para imprimir algo na tela como por exemplo uma mensagem
+exemplo echo "digite aqui seu texto";
+
+---
+
+Aula 5 : O que são variáveis?
+
+Variaveis são um espaço utilizado na memoria RAM do computador para armazenar algum dado seja ele texto, valor inteiro ou booleano (true ou false).
+toda variavel em php se inicia com $
+O codigo em php é lido de cima para baixo da esquerda para a direita
+
+---
+
+Aula 6 : O que são condicionais e booleanos ?
