@@ -56,3 +56,5 @@ O codigo em php é lido de cima para baixo da esquerda para a direita
 ---
 
 Aula 6 : O que são condicionais e booleanos ?
+
+valores booleanos se tratam de apenas dois, true(verdadeiro) ou false(falso) ou 1 para true e 0 para false
