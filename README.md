@@ -30,9 +30,11 @@ portas do servidor
 
 ---
 
-Aula 3 : Configurando Ambiente de Desenvolvimento
+Aula 3 : Configurando Ambiente de Desenvolvimento (Windows)
 
 Passo 1 -> baixar o xampp (conjunto de ferramentas Apache, MySql, PHP e Perl) www.apachafriends.org
 Passo 2 -> Instalar a ferramenta
 Passo 3 -> baixar vscode code.visualstudio.com/download
 Passo 4 -> instalar vscode
+
+---
