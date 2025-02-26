@@ -83,3 +83,16 @@ parametros são usados para fazer uso de dados que estão declaradas fora da fun
 Aula 9 : O que são filtros?
 
 função para filtrar dados especificos.
+
+---
+
+Aula 10 : Funções anonimas e refatoração
+
+função anonima como o proprio nome ja diz é uma função sem nome mas que existe a obrigatoriedade de ser identificada ou seja ela deve ser atribuida dentro de uma variavel por exemplo
+
+$nome = "maria";
+$mostrarNome = funtion(){
+echo $nome;
+};
+
+repare no final da função apos o fechamento da chave que tem um ; (ponto e virgula) no final pois como se trata de uma variavel é necessario fazer o uso do ;
