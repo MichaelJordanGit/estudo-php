@@ -60,3 +60,9 @@ Aula 6 : O que são condicionais e booleanos ?
 valores booleanos se tratam de apenas dois, true(verdadeiro) ou false(falso) ou 1 para true e 0 para false
 
 condicionais são estruturas que servem para controlar o fluxo e decidir qual sentido a aplicação deve seguir de acordo com a condição.
+
+---
+
+Aula 7: Entendendo sobre Arrays
+
+o array é uma estrutura de dados que armazena diversos valores de diversos tipos como por exemplo uma String, um valor inteiro ou um valor booleano. Arrays tambem são conhecidos como vetores
