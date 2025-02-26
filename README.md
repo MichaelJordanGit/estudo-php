@@ -77,3 +77,9 @@ function nomeFuncao( parametros ){
 }
 
 parametros são usados para fazer uso de dados que estão declaradas fora da função
+
+---
+
+Aula 9 : O que são filtros?
+
+função para filtrar dados especificos.
