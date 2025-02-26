@@ -66,3 +66,14 @@ condicionais são estruturas que servem para controlar o fluxo e decidir qual se
 Aula 7: Entendendo sobre Arrays
 
 o array é uma estrutura de dados que armazena diversos valores de diversos tipos como por exemplo uma String, um valor inteiro ou um valor booleano. Arrays tambem são conhecidos como vetores
+
+---
+
+Aula 8: Funções
+
+uma função nada mais é do que um bloco de codigo reutilizavel que tem como finalidade executar uma tarefa especifica sua estrutura se define em:
+function nomeFuncao( parametros ){
+//logica da função
+}
+
+parametros são usados para fazer uso de dados que estão declaradas fora da função
