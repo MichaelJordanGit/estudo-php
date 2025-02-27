@@ -1,0 +1,9 @@
+div {
+  background: green;
+  color: white;
+}
+div a {
+  text-decoration: none;
+  color: white;
+  background: rgb(8, 58, 17);
+}
