@@ -96,3 +96,19 @@ echo $nome;
 };
 
 repare no final da função apos o fechamento da chave que tem um ; (ponto e virgula) no final pois como se trata de uma variavel é necessario fazer o uso do ;
+
+---
+
+Aula 11 : Utilizando arrayFilter
+Baseado na aula anterior foi utilizado a função array_filter para filtrar dados
+
+---
+
+Aula 12 : conceitos de HTML
+
+HTML = Hyper Text Markup Language
+nesta aula foi apresentado os conceitos basicos no html. Sua estrutura e para que serve as tags iniciais como metatags para uso de informações sobre a pagina para mecanismos de busca por exemplo. Em seguida a tag <title> que informa o titulo da pagina na guia do navegador.
+
+---
+
+Aula 13 - Framework
