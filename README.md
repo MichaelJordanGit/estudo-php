@@ -123,3 +123,7 @@ Aula 14 : Utilizando o framework Tailwind
 
 Aula 15 : Iniciando o projeto Portfolio
 Iniciando o portfolio pelo front end, trabalhando com o framework tailwind e estilizando o layout com classes ja pre-definidas pelo proprio framework.
+
+---
+
+Projeto do portfolio concluido utilizando as stacks HTML, Tailwind e PHP. Foi comprendido bem o conceito de foreach, estilizações e includ. Foi ensinado copmo funciona as estruturas if e else para controle de fluxo e tambem o uso de array.
