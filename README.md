@@ -118,3 +118,8 @@ Framework nada mais é do que uma estrutura de codigos prontos pre-definidos que
 ---
 
 Aula 14 : Utilizando o framework Tailwind
+
+---
+
+Aula 15 : Iniciando o projeto Portfolio
+Iniciando o portfolio pelo front end, trabalhando com o framework tailwind e estilizando o layout com classes ja pre-definidas pelo proprio framework.
