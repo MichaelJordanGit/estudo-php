@@ -5,5 +5,5 @@ $filtrado = array_filter($livros, function ($l) use ($id) {
     return $l['id'] == $id;
 });
 $livro = array_pop($filtrado); // array pop retorna o ultimo elemento do array
-$view = "livro";
-require 'views/templates/app.php';
+
+view('livro');
