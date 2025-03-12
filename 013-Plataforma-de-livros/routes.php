@@ -9,4 +9,6 @@ if (!$controller) $controller = 'index';
 if (!file_exists("controller/{$controller}.controller.php")) {
     abort(404);
 }
+
+
 require "controller/{$controller}.controller.php";

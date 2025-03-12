@@ -1,3 +1,7 @@
+<?php
+require "dados.php"
+?>
+
 <form class="w-full flex space-x-2 mt-6">
     <input
         type=" text"

@@ -1,4 +1,7 @@
 <?php
+$db = new PDO('sqlite:database.sqlite');
+
+
 $livros = [
     [
         'id' => 1,
