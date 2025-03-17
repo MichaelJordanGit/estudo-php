@@ -1,14 +1,23 @@
-<?php 
-$host = 'localhost';
-$dbname = 'db_book_wise';
-$usuario = 'root';
-$senha = '';
+<?php
+    $host = "localhost";
+    $dbname = "db_livros";
+    $usuario = "michael";
+    $senha = "Michael123!";
 
+    try{
+        //criando a conexao com o banco 
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $usuario, $senha);
+        
+        //Configurando para lançar exceções em caso de erro
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-try{
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $usuario, $senha);
-    $pde-> setAttribute(PDO::ATTR_ERRMODE_EXCEPTION);
-    echo"conexão bem sucedida";
-}catch
+    }catch(PDOException $e){
+        die("Erro na conexão".$e->getMessage());
+        
+    }
 
 ?>
+ 
+
+
+
