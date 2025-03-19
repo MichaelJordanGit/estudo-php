@@ -3,7 +3,6 @@ $id = $_REQUEST['id'];
 $filtrado = array_filter($livros, function ($l) use ($id) {
    return $l->id == $id;
 });
-
 ?>
 <form class="w-full flex space-x-2 mt-6">
     <input
@@ -19,9 +18,9 @@ $filtrado = array_filter($livros, function ($l) use ($id) {
     foreach ($livros as $livro): ?>
         <div class="  p-2 bg-stone-900 rounded border-stone-800 border-2">
             <div class=" flex">
-                <div class="w-1/3">imagem</div>
+                <div class="w-1/3"><?=$livro->usuario_id?></div>
                 <div class="space-y-2">
-                    <a href="/livro?id=<?= $livro->id ?>" class="font-semibold hover:underline"><?= $livro->titulo?></a>
+                    <a href="/livro?id=<?= $livro->id?>" class="font-semibold hover:underline"><?= $livro->titulo?></a>
                     <div class="text-xs italic"><?= $livro->autor ?></div>
                     <div class="text-xs italic">🌟🌟🌟🌟🌟(3 avaliações)</div>
                 </div>

@@ -1,10 +1,5 @@
 <?php
+$pesquisar = $_REQUEST['pesquisar'] ?? '';
+$livros = (new DB)->livros2($pesquisar);
 
-$db = new DB();
-
-$livros = $db->livros();
-
-
-view('index', [
-    'livros' => $livros
-]);
+view('index', ['livros' => $livros]);

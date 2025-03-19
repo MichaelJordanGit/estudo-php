@@ -1,8 +1,6 @@
 <?php
 $id = $_REQUEST['id'];
 $db = new DB;
-$livro = $db->livros($id);
-if(!$id){
-}
+$livro = $db->livro($id); 
 view('livro', ['livro' => $livro]);
 
