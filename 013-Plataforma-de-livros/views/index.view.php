@@ -1,8 +1,8 @@
 <?php
-$id = $_REQUEST['id'];
-$filtrado = array_filter($livros, function ($l) use ($id) {
-   return $l->id == $id;
-});
+// $id = $_REQUEST['id'];
+// $filtrado = array_filter($livros, function ($l) use ($id) {
+//    return $l->id == $id;
+// });
 ?>
 <form class="w-full flex space-x-2 mt-6">
     <input

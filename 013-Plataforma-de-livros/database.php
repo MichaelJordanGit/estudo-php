@@ -6,56 +6,45 @@ class DB
     private $pdo;
 
     public function __construct(){
+        
         require "conexao.php";
+
         $this->pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $usuario, $senha);
-        //$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }   
-    // fetchAll tras todos registros da query
-    public function livros($pesquisa = '')
-    {
-        require "conexao.php";       
-
-        $sql = "";
-        
-        if($pesquisa){
-            $pesquisa = trim($pesquisa);
-
-            $sql = "where
-            
-            usuario_id = 2
-            and( titulo like $pesquisa'
-            or autor like '%$pesquisa%' 
-            or descricao like'%$pesquisa%')";
-           
+    }  
+    
+    public function query($query, $class = null, $params = []){
+        $prepare = $this->pdo->prepare($query);
+        if($class){
+            $prepare->setFetchMode(PDO::FETCH_CLASS, $class);
         }
-        
-        $query = $this->pdo->query("select * from livro $sql");
-        $query->execute();
+        $prepare->execute($params);
 
-        
-        $itens =  $query->fetchAll();
-        return array_map(fn($item) => Livro::make($item), $itens);
-        
+        return $prepare;
     }
-
-    public function livro($id){
+    // fetchAll tras todos registros da query
+//     public function livros($pesquisa = '')
+//     {
+//         $pesquisa = trim($pesquisa);
+//         require "conexao.php";
         
-        require "conexao.php";
-        $sql .= " where id = " . $id;
-        $query = $this->pdo->query("select * from livro");
-        $itens =  $query->fetchAll();
-        return array_map(fn($item) => Livro::make($item), $itens);
-    }
+        
+//         $prepare = $this->pdo->prepare("select * from livro where usuario_id = 2 and titulo like :pesquisa");
+//         $prepare->bindValue(':pesquisa', "%$pesquisa%");
+//         $prepare->setFetchMode(PDO::FETCH_CLASS, Livro::class);
+//         $prepare->execute();
+//         return $prepare->fetchAll();
+        
+//     }
 
-    public function livros2($pesquisa = ''){
-        require "conexao.php";
-        //$prepare = $this->pdo->prepare("select * from livro where usuario_id = 1");
-        $prepare = $this->pdo->prepare("select * from livro where usuario_id = 2 and titulo like :pesquisa");
-        $prepare->bindValue(':pesquisa', "%$pesquisa%"); //esse 
-        $prepare->execute();
+//     public function livro($id){
+//         $prepare = $this->pdo->prepare("select * from livro where id = :id");
+//         $prepare->bindValue('id', $id);
+//         $prepare->setFetchMode(PDO::FETCH_CLASS, Livro::class);
+//         $prepare->execute();
+//         return $prepare->fetch();
+       
+//     }
 
-        $itens = $prepare->fetchAll();
-        return array_map(fn($item) => Livro::make($item), $itens);
-    }
-}
+   
+ }
 
