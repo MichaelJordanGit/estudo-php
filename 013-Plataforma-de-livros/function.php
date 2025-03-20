@@ -9,12 +9,16 @@ function view($view, $data = [])
 
 function dd(...$dump)
 {
+    dump($dump);
+    exit();
+}
+function dump(...$dump)
+{
     echo "<pre>";
     var_dump($dump);
     echo "</pre>";
-    die();
+    
 }
-
 function abort($code)
 {
     http_response_code($code);
