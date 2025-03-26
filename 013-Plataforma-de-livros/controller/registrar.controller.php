@@ -3,7 +3,13 @@ require_once 'Validacao.php';
 $pdo = new DB;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-   
+
+    $validacao = Validacao::validar([
+        'nome' => ['required'],
+        'email' => ['required', 'email', 'confirmed', 'unique:usuarios'],
+        'senha' => ['required', 'min:8','max:30', 'strong'],
+    ], $_POST);
+
 
     $validacoes = [];
     $nome = $_POST['nome'];
@@ -11,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email_confirmacao = $_POST['email_confirmacao'];
     $senha = $_POST['senha'];
    
-    if ($validacao->naoPassou()) {
+    if($validacao->naoPassou('registrar')){
         header('location: /login');
         exit();
     }
@@ -53,9 +59,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         params: [
             'nome' => $_POST['nome'],
             'email' => $_POST['email'],
-            'senha' => $_POST['senha']
+            'senha' => password_hash($_POST['senha'], PASSWORD_DEFAULT)
         ]
     );
-    header('location: /login?mensagem=Registrado com sucesso');
+    flash()->push('mensagem', 'Registrado com sucesso! ');
+    header('location: /login');
     exit();
 }
+
+header('location: /login');
+exit();

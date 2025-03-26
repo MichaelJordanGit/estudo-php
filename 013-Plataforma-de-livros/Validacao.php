@@ -4,6 +4,8 @@ class Validacao
 {
     public $validacoes = [];
 
+
+
     public static function validar($regras, $dados)
     {
         $validacao = new self;
@@ -25,6 +27,21 @@ class Validacao
             }
         }
         return $validacao;
+    }
+    private function unique($tabela, $campo, $valor)
+    {
+        if (strlen($valor) == 0) {
+            return;
+        }
+        $pdo = new DB(conexao('database'));
+        $resultado = $pdo->query(
+            query: "SELECT * FROM $tabela WHERE $campo = :valor",
+            params: ['valor' => $valor]
+        )->fetch();
+
+        if($resultado){
+            $this->validacoes[] = "o $campo ja esta sendo usando. ";
+        }
     }
     private function required($campo, $valor)
     {
@@ -68,9 +85,14 @@ class Validacao
         }
     }
 
-    public function naoPassou()
+    public function naoPassou($nomeCustomizado = null)
     {
-        $_SESSION['validacoes'] = $this->validacoes;
+        $chave = 'validacoes';
+        if ($nomeCustomizado) {
+            $chave .= '_' . $nomeCustomizado;
+        }
+        flash()->push($chave, $this->validacoes);
+
         return sizeof($this->validacoes) > 0;
     }
 }
