@@ -8,5 +8,10 @@ $livro = $pdo
     params:['id'=>$_GET['id']])
 ->fetch();
 
-view('livro', ['livro' => $livro]);
+$avaliacoes = $pdo->query
+("select * from avaliacoes where livro_id = :id", 
+Avaliacao::class, 
+['id' => $_GET['id']])->fetchAll();
+
+view('livro', compact('livro', 'avaliacoes'));
 

@@ -42,3 +42,11 @@ function conexao($chave = null)
     }
     return $con;
 }
+
+
+function auth(){
+    if(!isset($_SESSION['auth'])){
+            return null; 
+    }
+    return $_SESSION['auth'];
+}

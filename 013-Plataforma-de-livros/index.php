@@ -2,6 +2,7 @@
 
 require 'model/Livro.php';
 require 'model/Usuario.php';
+require 'model/Avaliacao.php';
 
 session_start();
 require 'function.php';

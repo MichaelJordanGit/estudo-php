@@ -15,9 +15,11 @@ class DB
 
     public function query($query, $class = null, $params = [])
     {
+        
         $prepare = $this->pdo->prepare($query);
         if ($class) {
             $prepare->setFetchMode(PDO::FETCH_CLASS, $class);
+            
         }
         $prepare->execute($params);
 
@@ -25,4 +27,4 @@ class DB
     }
 }
 
-$pdo = new DB(conexao('database'));
+$pdo = new DB(conexao('pdo'));
