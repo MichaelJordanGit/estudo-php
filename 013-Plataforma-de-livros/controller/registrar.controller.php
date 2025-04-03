@@ -1,5 +1,5 @@
 <?php
-require_once 'Validacao.php';
+require_once '../Validacao.php';
 $pdo = new DB;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 

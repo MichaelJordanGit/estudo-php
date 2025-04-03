@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <title>Book Wise</title>
 </head>
@@ -14,7 +15,10 @@
             <div class="font-bold text-xl tracking-wider">Book Wise</div>
             <ul class="flex space-x-4 font-bold">
                 <li><a href="/" class="text-lime-500">Explorar</a></li>
-                <li><a href="/meus-livros" class="hover:underline">Meus Livros</a></li>
+                <?php
+                if (auth()) : ?>
+                    <li><a href="/meus-livros" class="hover:underline">Meus Livros</a></li>
+                <?php endif; ?>
             </ul>
             <ul>
                 <?php
@@ -36,7 +40,7 @@
             </div>
         <?php endif; ?>
         <?php
-        require "views/{$view}.view.php"
+        require "../views/{$view}.view.php"
         ?>
 
 

@@ -14,7 +14,7 @@ $validacao = Validacao::validar([
 ], $_POST);
 
 if ($validacao->naoPassou('login')) {
-    header('location: /livro?id=' . $livro_id);
+    header('location: ../livro?id=' . $livro_id);
     exit();
 }
 
@@ -25,5 +25,5 @@ values(:usuario_id, :livro_id, :avaliacao, :nota);
 ", null, compact('usuario_id', 'livro_id', 'avaliacao', 'nota'));
 
 flash()->push('mensagem', 'Avaliação criada com sucesso!');
-header('location: /livro?id=' . $livro_id);
+header('location: ../livro?id=' . $livro_id);
 exit();

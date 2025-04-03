@@ -1,5 +1,5 @@
 <?php
-require 'conexao.php';
+require '../conexao.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'] ?? null;
     $senha = $_POST['senha'] ?? null;
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //VALIDAR SENHA
         if(! password_verify($_POST['senha'], $usuario->senha)){
             flash()->push('validacoes_login', ['Usuario ou senha estão incorretos!']);
-            header('location: /login');
+            header('location: ../login');
             exit();
         }
 
